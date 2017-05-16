@@ -1,0 +1,112 @@
+\typeout{Modified Conference Style for COGSCI - Marco Wirthlin}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Packages
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\def\lstbasicfont{\fontfamily{pcr}\selectfont\footnotesize}
+
+%% Fonts and language
+\RequirePackage[utf8]{inputenc}
+\RequirePackage[T1]{fontenc}
+\RequirePackage{amsmath,amsfonts,amssymb}
+\RequirePackage{lmodern}
+\RequirePackage{lettrine} % For dropped capitals
+
+\RequirePackage[scaled]{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+
+\RequirePackage[font=small,format=plain,labelfont=bf,up,textfont=it,up]{caption}
+\RequirePackage[colorlinks=true, citecolor=blue, filecolor=blue, linkcolor=blue, urlcolor=blue, breaklinks=false]{hyperref}
+
+\RequirePackage{todonotes}
+\RequirePackage{listings}
+\RequirePackage{comment}
+\RequirePackage{lipsum}
+\RequirePackage{natbib}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Page dimensions
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\setlength{\parindent}{0pt} %No indents
+
+
+\setlength\oddsidemargin{-0.25in}
+\setlength\textheight{9.25in}
+\setlength\textwidth{7in}
+\setlength\columnsep{0.25in}
+\setlength\headheight{0pt}
+\setlength\headsep{0pt}
+
+
+\ifx\pdfoutput\@undefined
+\setlength\topmargin{0.75in}
+\else
+\setlength\topmargin{0in}
+\setlength\pdfpagewidth{8.5in}
+\setlength\pdfpageheight{11in}
+\fi
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Element configuration
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%Title
+\def\@maketitle%
+    {%
+    \linewidth\hsize
+    \centering
+    {\LARGE\bf \@title \par} \vskip 1em%
+    {\def\and{\unskip\enspace{\rm and}\enspace}%
+    \def\And{\end{tabular}\hss \egroup \hskip 1in plus 2fil
+    \hbox to 0pt\bgroup\hss \begin{tabular}[t]{c}}%
+    \def\AND{\end{tabular}\hss\egroup \hfil\hfil\egroup
+    \vskip 1em
+    \hbox to \linewidth\bgroup \hfil\hfil
+    \hbox to 0pt\bgroup\hss \begin{tabular}[t]{c}}
+    \hbox to \linewidth\bgroup \hfil\hfil
+    \hbox to 0pt\bgroup\hss \begin{tabular}[t]{c}\@author
+    \end{tabular}\hss\egroup
+    \hfil\hfil\egroup}
+    \vskip 2em
+    }
+
+% Abstract
+\renewenvironment{abstract}
+    {\centerline{\bf Abstract}
+    \begin{quote}
+        \small}
+        {\par
+    \end{quote}}
+
+
+% Sections
+\def\section{\@startsection {section}{1}{\z@}{-1.5ex plus
+-0.25ex minus -.2ex}{3pt plus 2pt minus 1pt}{\Large\bf}}
+\def\subsection{\@startsection{subsection}{2}{\z@}{-1.5ex plus
+-0.25ex minus -.2ex}{3pt plus 2pt minus 1pt}{\large\bf\raggedright}}
+\def\subsubsection{\@startsection{subparagraph}{3}{\z@}{-6pt plus
+2pt minus 1pt}{-1em}{\normalsize\bf}}
+
+\setcounter{secnumdepth}{0}
+
+% Footnotes
+\footnotesep 6.65pt %
+\skip\footins 9pt plus 4pt minus 2pt
+\def\footnoterule{\kern-3pt \hrule width 5pc \kern 2.6pt }
+\setcounter{footnote}{0}
+
+
+% Less leading in most fonts (due to the narrow columns)
+% The choices were between 1-pt and 1.5-pt leading
+\def\@normalsize{\@setsize\normalsize{10pt}\xpt\@xpt}
+\def\small{\@setsize\small{9pt}\ixpt\@ixpt}
+\def\footnotesize{\@setsize\footnotesize{9pt}\ixpt\@ixpt}
+\def\scriptsize{\@setsize\scriptsize{7pt}\viipt\@viipt}
+\def\tiny{\@setsize\tiny{6pt}\vipt\@vipt}
+\def\large{\@setsize\large{13pt}\xipt\@xipt}
+\def\Large{\@setsize\Large{15pt}\xiipt\@xiipt}
+\def\LARGE{\@setsize\LARGE{17pt}\xivpt\@xivpt}
+\def\huge{\@setsize\huge{20pt}\xviipt\@xviipt}
+\def\Huge{\@setsize\Huge{23pt}\xxpt\@xxpt}
